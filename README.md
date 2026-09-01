@@ -35,7 +35,7 @@ endorsed by, or sponsored by Progressive Insurance**.
 ## Features
 
 - **Fully responsive** design (mobile-first, tablet, desktop) with a
-  hamburger nav below 820px and touch-friendly (44px+) controls.
+  hamburger nav below 1040px and touch-friendly (44px+) controls.
 - **Dark mode** toggle, persisted via `localStorage` and defaulting to the
   visitor's OS preference.
 - **Interactive tools**, all implemented in dependency-free JavaScript:
