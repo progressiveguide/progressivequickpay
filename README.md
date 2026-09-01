@@ -106,6 +106,6 @@ modification.
 All payment, discount, fee, and grace-period figures on this site are
 illustrative and based on publicly available 2026 information. They can
 vary by state, policy, and underwriting company. Always confirm
-specifics directly with Progressive Insurance at 1-888-620-0950 or
+specifics directly with Progressive Insurance at 1-800-776-4737 or
 through the official Progressive website/app before making financial
 decisions.
