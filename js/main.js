@@ -59,6 +59,19 @@
         th.setAttribute('tabindex', '0');
         th.setAttribute('role', 'button');
         var sortDir = null;
+
+        // Extracts a representative number from a cell for sorting.
+        // Ranges like "10-30 days" or "$5-$25" use the average of the
+        // numbers found rather than just the first (lower) value, so
+        // that ranges compare more sensibly against single values.
+        function numericValue(text) {
+          var matches = text.match(/-?\d+(\.\d+)?/g);
+          if (!matches) return NaN;
+          var nums = matches.map(parseFloat);
+          var sum = nums.reduce(function (a, b) { return a + b; }, 0);
+          return sum / nums.length;
+        }
+
         function sort() {
           var tbody = table.querySelector('tbody');
           var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
@@ -66,10 +79,10 @@
           rows.sort(function (a, b) {
             var aText = a.children[index].textContent.trim().toLowerCase();
             var bText = b.children[index].textContent.trim().toLowerCase();
-            var aNum = parseFloat(aText.replace(/[^0-9.\-]/g, ''));
-            var bNum = parseFloat(bText.replace(/[^0-9.\-]/g, ''));
+            var aNum = numericValue(aText);
+            var bNum = numericValue(bText);
             var cmp;
-            if (!isNaN(aNum) && !isNaN(bNum) && /[0-9]/.test(aText)) {
+            if (!isNaN(aNum) && !isNaN(bNum)) {
               cmp = aNum - bNum;
             } else {
               cmp = aText.localeCompare(bText);
