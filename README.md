@@ -75,11 +75,13 @@ modification.
      `main` branch, root directory.
    - The site will be served at `https://<org>.github.io/<repo>/`.
 2. **Update canonical/OG URLs if the domain changes.** All pages currently
-   reference `https://www.billmatguides.com/` in canonical tags, Open
-   Graph tags, and `sitemap.xml`/`robots.txt`. If you deploy to a
-   different domain, update the `SITE` constant used when the pages were
-   generated (or find-and-replace the domain across the HTML files,
-   `sitemap.xml`, and `robots.txt`).
+   reference `https://github.com/progressiveguide/progressivequickpay/` in
+   canonical tags, Open Graph tags, and `sitemap.xml`/`robots.txt`. If you
+   deploy to a different domain (for example a GitHub Pages URL such as
+   `https://progressiveguide.github.io/progressivequickpay/`, or a custom
+   domain), update the `SITE` constant used when the pages were generated
+   (or find-and-replace the domain across the HTML files, `sitemap.xml`,
+   and `robots.txt`).
 3. **Verify HTTPS is enabled** on your host — required both for the
    "HTTPS Secured" trust badge in the footer and for real-world SEO/trust
    signals.
