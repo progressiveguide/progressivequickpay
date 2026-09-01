@@ -204,7 +204,13 @@
         reasoning.push('Based on your answers, a standard online payment gives you the best balance of speed, control, and simplicity without committing to automatic billing.');
       }
 
-      resultBox.innerHTML = '<h3>Recommended: ' + recommendation + '</h3><p>' + reasoning.join(' ') + '</p>';
+      resultBox.textContent = '';
+      var heading = document.createElement('h3');
+      heading.textContent = 'Recommended: ' + recommendation;
+      var body = document.createElement('p');
+      body.textContent = reasoning.join(' ');
+      resultBox.appendChild(heading);
+      resultBox.appendChild(body);
       resultBox.classList.add('show');
       resultBox.setAttribute('tabindex', '-1');
       resultBox.focus();
@@ -244,9 +250,25 @@
         return;
       }
       var data = GRACE_DATA[state];
-      resultBox.innerHTML = '<strong>' + state + ':</strong> Typical grace period is <strong>' + data.range +
-        '</strong> during the policy term, with late fees around <strong>' + data.fee + '</strong>. ' +
-        'This is an illustrative range for planning purposes — confirm your exact grace period and fee with Progressive using your declarations page or online account, since it can vary by policy and underwriting company.';
+      resultBox.textContent = '';
+
+      var stateStrong = document.createElement('strong');
+      stateStrong.textContent = state + ':';
+      var rangeStrong = document.createElement('strong');
+      rangeStrong.textContent = data.range;
+      var feeStrong = document.createElement('strong');
+      feeStrong.textContent = data.fee;
+
+      resultBox.appendChild(stateStrong);
+      resultBox.appendChild(document.createTextNode(' Typical grace period is '));
+      resultBox.appendChild(rangeStrong);
+      resultBox.appendChild(document.createTextNode(' during the policy term, with late fees around '));
+      resultBox.appendChild(feeStrong);
+      resultBox.appendChild(document.createTextNode(
+        '. This is an illustrative range for planning purposes \u2014 confirm your exact grace period and ' +
+        'fee with Progressive using your declarations page or online account, since it can vary by policy ' +
+        'and underwriting company.'
+      ));
       resultBox.classList.add('show');
     });
   }
