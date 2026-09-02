@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://github.com/progressiveguide/progressivequickpay/sitemap.xml
+Sitemap: https://progressiveguide.github.io/progressivequickpay/sitemap.xml

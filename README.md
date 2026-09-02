@@ -75,7 +75,7 @@ modification.
      `main` branch, root directory.
    - The site will be served at `https://<org>.github.io/<repo>/`.
 2. **Update canonical/OG URLs if the domain changes.** All pages currently
-   reference `https://github.com/progressiveguide/progressivequickpay/` in
+   reference `https://progressiveguide.github.io/progressivequickpay/` in
    canonical tags, Open Graph tags, and `sitemap.xml`/`robots.txt`. If you
    deploy to a different domain (for example a GitHub Pages URL such as
    `https://progressiveguide.github.io/progressivequickpay/`, or a custom
